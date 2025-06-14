@@ -27,7 +27,7 @@
 
 ## Creadits
 
-You can fork this repo to modify and make changes of your own. Please give the proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+You can fork this repo to modify and make changes of your own. Please give the proper credit by linking back to [saffronAayush](https://github.com/saffronAayush/Portfolio). Thanks!
 
 ## Built With
 
