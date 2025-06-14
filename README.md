@@ -1,6 +1,6 @@
 <h2 align="center">
   Portfolio Website <br/>
-  <a href="https://aayush-porfolio.vercel.app/" target="_blank">aayush.tech</a>
+  <a href="https://aayushsoni-dev.vercel.app" target="_blank">aayush.tech</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./public/image.png" />
@@ -31,7 +31,7 @@ You can fork this repo to modify and make changes of your own. Please give the p
 
 ## Built With
 
-My personal portfolio <a href="https://aayush-portfolio.vercel.app/" target="_blank">aayush.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My personal portfolio <a href="https://aayushsoni-dev.vercel.app" target="_blank">aayush.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 
