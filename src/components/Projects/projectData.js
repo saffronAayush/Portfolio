@@ -3,6 +3,7 @@ import baatCheet from "../../Assets/Projects/baatCheet.png";
 import beyondChat from "../../Assets/Projects/beyondChat.png";
 import dekhlo from "../../Assets/Projects/dekhlo.png";
 import Docs from "../../Assets/Projects/Docs.png";
+import Groot from "../../Assets/Projects/Groot.png";
 
 const projectsData = [
   {
@@ -20,6 +21,14 @@ const projectsData = [
       "A collaborative real-time document editor like Google Docs, built with Next.js, Tailwind CSS, Clerk, Convex, Liveblocks, and Tiptap. Features multi-user editing, comments, tagging, organization-based access, and export to multiple formats including PDF, HTML, JSON, and text.",
     ghLink: "https://github.com/saffronAayush/docs",
     demoLink: "https://docs-iota-navy.vercel.app/",
+  },
+  {
+    imgPath: `${Groot}`,
+    title: "Groot - A Git like VCS",
+    description:
+      "Groot is a minimalist, CLI-based version control system built with Node.js, inspired by Git. It allows you to track file changes, manage commits, view diffs, and more — all while keeping things educational and simple.",
+    ghLink: "https://github.com/saffronAayush/Groot---Our-personal-VCS",
+    demoLink: null,
   },
   {
     imgPath: `${baatCheet}`,

@@ -1,13 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
-import laptopImg from "../../Assets/about.png";
+import Tilt from "react-parallax-tilt";
 import Particle from "../Particle";
 import Aboutcard from "./AboutCard";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
 
+import myImg from "../../Assets/me.jpg";
+
 function About() {
   return (
-    <Container fluid className="about-section">
+    <Container id="about" fluid className="about-section">
       <Particle />
       <Container>
         <Row
@@ -30,26 +32,24 @@ function About() {
             </h1>
             <Aboutcard />
           </Col>
+
           <Col
             md={5}
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <Tilt>
+              <img src={myImg} className="img-fluid" alt="avatar" />
+            </Tilt>
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
 
         <Techstack />
 
-        <h1 className="project-heading">
+        {/* <h1 className="project-heading" style={{ marginTop: "40px" }}>
           <strong className="purple">Tools</strong> I use
-        </h1>
-        <Toolstack />
-
-        {/* <Github /> */}
+        </h1> */}
+        {/* <Toolstack /> */}
       </Container>
     </Container>
   );

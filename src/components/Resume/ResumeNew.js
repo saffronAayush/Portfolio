@@ -29,71 +29,74 @@ function ResumeNew() {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#f9f9f9" }}>
-      <Container
-        fluid
-        className="resume-section"
+    <Container
+      fluid
+      className="resume-section"
+      style={{
+        padding: "2rem 1rem",
+      }}
+      id="resume"
+    >
+      <Particle />
+      <h1
+        className="project-heading"
+        style={{ marginTop: "-30px", marginBottom: "25px" }}
+      >
+        My <strong className=" purple">Resume</strong>
+      </h1>
+      <Row
+        className="justify-content-center mb-4"
+        style={{ position: "relative" }}
+      >
+        <Button
+          variant="primary"
+          href={pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ maxWidth: "250px", zIndex: "10000" }}
+        >
+          <AiOutlineDownload />
+          &nbsp;Download CV
+        </Button>
+      </Row>
+
+      <Row
+        ref={containerRef}
+        className="justify-content-center resume"
         style={{
-          padding: "2rem 1rem",
+          margin: "auto",
+          marginBottom: "3rem",
+          backgroundColor: "#1e1e1e", // dark background
+          borderRadius: "8px",
+          boxShadow: "0 4px 15px rgba(0, 0, 0, 0.5)",
+          padding: "1rem",
+          maxWidth: "900px",
+          border: "1px solid rgba(255, 255, 255, 0.05)",
         }}
       >
-        <Particle />
-        <Row
-          className="justify-content-center mb-4"
-          style={{ position: "relative" }}
-        >
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ maxWidth: "250px", zIndex: "10000" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+        <Document file={pdf} className="d-flex justify-content-center">
+          <Page
+            pageNumber={1}
+            width={pageWidth}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+          />
+        </Document>
+      </Row>
 
-        <Row
-          ref={containerRef}
-          className="justify-content-center resume"
-          style={{
-            margin: "auto",
-            marginBottom: "3rem",
-            backgroundColor: "white",
-            borderRadius: "8px",
-            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
-            padding: "1rem",
-            maxWidth: "900px",
-          }}
+      <Row className="justify-content-center" style={{ position: "relative" }}>
+        <Button
+          variant="primary"
+          href={pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ maxWidth: "250px", marginTop: "30px" }}
         >
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page
-              pageNumber={1}
-              width={pageWidth}
-              renderTextLayer={false}
-              renderAnnotationLayer={false}
-            />
-          </Document>
-        </Row>
-
-        <Row
-          className="justify-content-center"
-          style={{ position: "relative" }}
-        >
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ maxWidth: "250px", marginTop: "30px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
-      </Container>
-    </div>
+          <AiOutlineDownload />
+          &nbsp;Download CV
+        </Button>
+      </Row>
+    </Container>
   );
 }
 

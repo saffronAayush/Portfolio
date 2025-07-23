@@ -1,20 +1,41 @@
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import homeLogo from "../../Assets/home-main.svg";
+import About from "../About/About.js";
+import Contact from "../Contact/Contact.js";
 import Particle from "../Particle";
-import Home2 from "./Home2";
+import Projects from "../Projects/Projects.js";
+import ResumeNew from "../Resume/ResumeNew.js";
 import Type from "./Type";
 
 function Home() {
+  const [mailLink, setMailLink] = useState(
+    "https://mail.google.com/mail/?view=cm&fs=1&to=soniaayush5562@gmail.com"
+  );
+
+  useEffect(() => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      setMailLink("mailto:soniaayush5562@gmail.com");
+    } else
+      setMailLink(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=soniaayush@gmail.com"
+      );
+  }, []);
+
   return (
     <section>
+      <Particle />
       <Container
         fluid
         className="home-section"
         id="home"
         style={{ minHeight: "100dvh" }}
       >
-        <Particle />
-
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -33,6 +54,54 @@ function Home() {
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
+              <div>
+                <ul
+                  style={{
+                    marginTop: "20px",
+                  }}
+                >
+                  <li className="social-icons">
+                    <a
+                      href="https://github.com/saffronaayush"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-colour home-social-icons"
+                    >
+                      <AiFillGithub />
+                    </a>
+                  </li>
+                  <li className="social-icons">
+                    <a
+                      href={mailLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-colour home-social-icons"
+                    >
+                      <SiGmail />
+                    </a>
+                  </li>
+                  <li className="social-icons">
+                    <a
+                      href="https://www.linkedin.com/in/aayush-soni-dev"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-colour home-social-icons"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+                  </li>
+                  <li className="social-icons">
+                    <a
+                      href="https://www.instagram.com/saffron_aayush"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-colour home-social-icons"
+                    >
+                      <AiFillInstagram />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </Col>
 
             <Col
@@ -50,7 +119,11 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <Home2 />
+
+      <About />
+      <Projects />
+      <ResumeNew />
+      <Contact />
     </section>
   );
 }

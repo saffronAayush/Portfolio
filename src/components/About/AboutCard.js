@@ -7,28 +7,37 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Aayush Soni</span> from
-            <span className="purple"> Rajasthan, India</span>.
+            Hi Everyone, I’m <span className="purple">Aayush Soni</span> from
+            <span className="purple"> Rajasthan, India</span>. I’m currently
+            pursuing a B.Tech in Artificial Intelligence & Data Science at IIIT
+            Sri City.
             <br />
             <br />
-            I’m currently pursuing a B.Tech in Artificial Intelligence & Data
-            Science at IIIT Sri City.
+            I’m fluent in core technologies like
+            <span className="purple"> C++, JavaScript, and Python</span>.
+            <br />
+            <br />I enjoy building things for the web — whether it’s
+            <span className="purple"> frontend UIs</span>,
+            <span className="purple"> backend systems</span>, or exploring
+            emerging tech like <span className="purple">blockchain</span> and
+            <span className="purple"> AI/ML</span>.
             <br />
             <br />
-            I’m passionate about solving real-world problems through code —
-            whether it’s building scalable full-stack web apps, exploring
-            <span className="purple"> AI and blockchain technologies</span>, or
-            honing my skills in
-            <span className="purple"> data structures and algorithms</span>.
+            Whenever possible, I apply my passion for developing products using
+            <span className="purple"> Node.js</span> and modern JavaScript
+            libraries and frameworks like
+            <span className="purple"> React.js</span> and
+            <span className="purple"> Next.js</span>.
             <br />
             <br />
-            I have solved 500+ DSA problems across multiple platforms, which
-            fuels my problem-solving mindset and helps me write efficient, clean
-            code.
+            I’ve solved <span className="purple">500+ DSA problems</span> across
+            multiple platforms, which has shaped my problem-solving mindset and
+            helped me write efficient, clean code.
             <br />
             <br />
-            When I'm not coding, you'll probably find me:
+            When I'm not coding, you'll likely find me:
           </p>
+
           <ul>
             <li className="about-activity">
               <ImPointRight /> Tweaking UI/UX for side projects
@@ -37,7 +46,7 @@ function AboutCard() {
               <ImPointRight /> Listening to music while thinking about APIs
             </li>
             <li className="about-activity">
-              <ImPointRight /> Watching Anime
+              <ImPointRight /> Watching anime
             </li>
           </ul>
 

@@ -1,4 +1,3 @@
-import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
@@ -10,91 +9,88 @@ import {
 import { SiNextdotjs } from "react-icons/si";
 
 const skills = [
-  { name: "C++", icon: <CgCPlusPlus />, level: 90 },
   { name: "JavaScript", icon: <DiJavascript1 />, level: 85 },
-  { name: "Node.js", icon: <DiNodejs />, level: 85 },
+  { name: "Node.js", icon: <DiNodejs />, level: 80 },
   { name: "React.js", icon: <DiReact />, level: 90 },
-  { name: "Next.js", icon: <SiNextdotjs />, level: 85 },
+  { name: "Next.js", icon: <SiNextdotjs />, level: 70 },
+  { name: "C++", icon: <CgCPlusPlus />, level: 90 },
   { name: "MongoDB", icon: <DiMongodb />, level: 65 },
   { name: "Python", icon: <DiPython />, level: 80 },
 ];
 
-// Circle constants
-const radius = 40;
-const stroke = 8;
-const normalizedRadius = radius - stroke * 2;
-const circumference = normalizedRadius * 2 * Math.PI;
-
-function CircularProgress({ percentage }) {
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <svg
-      height={radius * 2}
-      width={radius * 2}
-      style={{ transform: "rotate(0deg)" }}
-    >
-      <circle
-        stroke="#2c2c3f"
-        fill="transparent"
-        strokeWidth={stroke}
-        r={normalizedRadius}
-        cx={radius}
-        cy={radius}
-      />
-      <circle
-        stroke="#8000ff"
-        fill="transparent"
-        strokeWidth={stroke}
-        strokeLinecap="round"
-        strokeDasharray={circumference + " " + circumference}
-        strokeDashoffset={strokeDashoffset}
-        r={normalizedRadius}
-        cx={radius}
-        cy={radius}
-        style={{ transition: "stroke-dashoffset 0.7s ease" }}
-      />
-      <text
-        x="50%"
-        y="50%"
-        dy="0.3em"
-        textAnchor="middle"
-        fill="white"
-        fontSize="1rem"
-        fontWeight="400"
-        style={{ userSelect: "none" }}
-      >
-        {percentage}%
-      </text>
-    </svg>
-  );
-}
-
 const Techstack = () => {
   return (
-    <div style={{ maxWidth: "720px", margin: "auto", paddingBottom: "50px" }}>
+    <div
+      style={{
+        maxWidth: "900px",
+        margin: "auto",
+        padding: "30px",
+        backgroundColor: "#1e1e2f",
+        borderRadius: "12px",
+        boxShadow: "0 0 10px rgba(128, 0, 255, 0.3)",
+        fontFamily: "'Roboto', system-ui, sans-serif",
+      }}
+    >
+      <h3
+        style={{
+          color: "#fff",
+          marginBottom: "25px",
+          textAlign: "start",
+          fontSize: "1.8rem",
+        }}
+      >
+        Professional <strong style={{ color: "#c792ea" }}>Skillset</strong>
+      </h3>
       {skills.map(({ name, icon, level }) => (
-        <Row
+        <div
           key={name}
-          className="align-items-center mb-4"
           style={{
-            color: "white",
-            backgroundColor: "#1e1e2f",
-            padding: "10px 15px",
-            borderRadius: "8px",
-            boxShadow: "0 0 8px rgba(128, 0, 255, 0.3)",
+            marginBottom: "20px",
+            color: "#fff",
           }}
         >
-          <Col xs={2} style={{ fontSize: "2.2rem", color: "purple" }}>
-            {icon}
-          </Col>
-          <Col xs={3} style={{ fontWeight: "600", fontSize: "1.2rem" }}>
-            {name}
-          </Col>
-          <Col xs={7} className="d-flex justify-content-center">
-            <CircularProgress percentage={level} />
-          </Col>
-        </Row>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "6px",
+            }}
+          >
+            <div
+              style={{
+                fontWeight: 500,
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                fontSize: "1.1rem",
+              }}
+            >
+              <span style={{ fontSize: "1.5rem", color: "#c792ea" }}>
+                {icon}
+              </span>
+              {name}
+            </div>
+            <span style={{ fontSize: "0.95rem" }}>{level}%</span>
+          </div>
+          <div
+            style={{
+              height: "8px",
+              borderRadius: "6px",
+              backgroundColor: "#3c3c53",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                width: `${level}%`,
+                height: "100%",
+                backgroundColor: "#633677",
+                transition: "width 0.6s ease-in-out",
+              }}
+            ></div>
+          </div>
+        </div>
       ))}
     </div>
   );

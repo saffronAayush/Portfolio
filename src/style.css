@@ -256,13 +256,30 @@ button:focus {
 
 .home-section {
   position: relative;
+  overflow: hidden; /* so ::before doesn't overflow */
+}
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3; /* Optional: make it more transparent */
+  z-index: -1;
+}
+
+/* .home-section {
+  position: relative;
   z-index: -1;
   background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
-}
+} */
 
 .home-content {
   padding: 9rem 0 2rem !important;
@@ -446,7 +463,7 @@ button:focus {
 /* --------- */
 .project-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 100px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
 }
@@ -575,7 +592,7 @@ button:focus {
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 100px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
@@ -638,7 +655,7 @@ button:focus {
 
 .resume-section {
   position: relative !important;
-  padding-top: 110px !important;
+  padding-top: 100px !important;
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
@@ -774,4 +791,59 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+.contact-section {
+  background: #0d0d0d;
+  color: #f1f1f1;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #a166ff;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.social-icons-list {
+  list-style: none;
+}
+
+.social-icon-link {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: #a166ff;
+  transform: scale(1.2);
+}
+
+.contact-info {
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+.contact-heading {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #a166ff;
+}
+
+.contact-label {
+  font-weight: bold;
+  color: #a166ff;
+}
+
+.contact-link {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
 }
